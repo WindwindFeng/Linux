@@ -1,0 +1,93 @@
+运维02
+
+1.什么是操作系统
+	OS ：操作系统是人与计算机硬件的中介
+	
+	操作系统是干什么的？
+	
+	控制所有资源：软件，硬件，驱动，应用
+	
+Unix
+	ENIC:没有适合的操作系统，分时多用户	
+		
+Linux
+Windows
+
+
+2.操作系统组成
+
+3.Linux发展历程
+
+Stallman 做出项目GNU(GNU is not unix)
+
+	GPL :通用公共许可，对开源软件，自由的定义
+
+	1.自由的下载，传递，使用
+	2.修改源代码后必须发出修改内容
+
+	LGPL
+	
+Linux版本
+		发行版 300+
+		RedHat
+			Red Hat RHEL
+			rhce
+			CentOS
+			红旗
+		Debian
+			ubuntu
+				deepin
+			麒麟
+			
+			
+			
+CentOS 6.9
+
+CentOS 7.5
+
+阿里云： http://mirrors.aliyun.com
+
+种类：
+	Everything：所有全包含
+	Minimal：最小安装
+	DVD：常用
+	
+	
+32位与64位区别
+
+1.支持4G以上内存
+2.同时处理更多数据
+3.专门用于大数据计算
+
+
+
+虚拟化软件
+VMware WorkStation
+Vitrual box 
+
+
+
+1.通用  数据不重要
+
+
+/boot  引导分区 200M
+
+swap 	交换分区（虚拟内存） 系统内存不足时 swap充当内存
+		内存 	< 8G  swap时内存1.5倍
+		内存 	> 8G  swap是8G
+/ 		根分区  c盘   所有软件的安装目录
+	剩余多少给多少数据空间
+
+2.数据重要
+
+
+/boot  引导分区 200M
+
+swap 	交换分区（虚拟内存） 系统内存不足时 swap充当内存
+		内存 	< 8G  swap时内存1.5倍
+		内存 	> 8G  swap是8G
+/ 		根分区  c盘   所有软件的安装目录 40-200G
+
+/data   剩余多少给多少数据空间
+
+

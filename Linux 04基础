@@ -1,0 +1,44 @@
+Linux 04
+
+mkdir创建文件夹
+	mkdir -p 可创建多级目录
+	
+tree 列出目录
+	-L 按按目录级别列出
+	-d 只列出目录
+	
+	tree xxx_{1..4} 模糊匹配查找
+	
+-touch 创建文件/目录  若已存在则会更新创建时间
+
+-stat  查看更新创建时间
+
+复制文件
+
+cp 文件名  路径
+
+cp -p 保持文件及权限
+
+cp -r 可以复制文件夹
+
+-v显示拷贝过程
+
+通配符 cp -v ?.txt /tmp/wind01 将txt结尾拷贝
+
+？代表一个字符 ？.txt
+*  ls *.txt 所有txt结尾
+{0..4}名为0-4的文件
+
+cp -v /etc/hosts /etc/hosts.bak
+cp -v /etc/{hosts,hosts.bak}
+cp -v /etc/hosts{,.bak}
+
+MV (剪切或重命名)
+
+mv xx  xx
+
+
+RM
+	-r 递归
+	-f 强制
+	-v显示过程

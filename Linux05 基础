@@ -1,0 +1,45 @@
+Linux 06 基础
+
+1.文件查看
+
+cat more less head detail
+
+2.文件下载
+
+wget curl
+
+3.locate
+
+whereis
+
+4.排序
+
+sort uniq
+
+cut awk
+
+1.切记不要乱删东西
+	/root
+		服务器出现异常原因：
+				1.误操作
+				2.系统负载大（集群实现）
+2.快照
+
+
+
+1.Linux终端概述
+
+字符终端
+服务器终端切换 Alt+F1——F6
+
+who命令：查看服务器当前登录
+
+root     tty1         2020-07-21 09:35   tty1：在服务器上登陆
+root     pts/0        2020-07-22 00:18 (10.0.0.1)  pts：远程登陆
+test1    pts/1        2020-07-22 01:30 (10.0.0.1)
+
+
+强制杀进程：pkill -9 -t tty2
+
+	-t 终端名称
+	-9 强制杀

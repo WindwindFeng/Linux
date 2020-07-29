@@ -1,0 +1,161 @@
+Linux系统文件属性
+	-l长格式
+	-h 人性化
+	-i innode
+	-d 看目录自身信息 
+	ls -l 看第一个字符
+	
+	-普通文件
+	d目录文件
+	b设备文件（存储设备）
+	c设备文件（打印机）
+	s套接字文件，进程间通信
+	p管道文件
+	l链接文件（浅蓝色）
+	
+	
+2.查看文件类型
+
+	file xx 
+	
+	du -sh /xxx 统计目录大小
+	
+3.Linux 系统链接文件
+
+	1.软连接  ln -s
+
+		n -s /root/1.txt  1.text.bak  //创建bak软连接
+		*软连接要使用绝对路径，软连接既可以指向文件 也可以指向目录*
+	2.硬链接  ln -s 
+		不能对文件夹做硬链接 
+		
+	区别：
+	1.ln创建软连接 ln-s 创建硬链接
+	2.目录不能创建硬链接，硬链接不能跨越分区系统
+	硬链接innode相同
+	
+	压缩包
+	
+	windows
+		rar
+		zip
+	Linux 
+		zip
+		tar.gz
+		tar.bz2
+		tar.xz
+		
+		
+	常用压缩工具
+	.gz gzip 压缩工具压缩的文件
+	.bz2 bzip2 压缩工具压缩的文件
+	.tar		tar没有压缩功能 只把目录合成一个文件
+	.tar.gz 	先打包，在压缩归档
+	.tar.bz2	先打包，在压缩归档
+	.tar.xz		先打包，在压缩归档
+	
+	
+	
+1.Zip压缩工具
+
+yum install -y zip unzip
+
+zip压缩
+
+-q：不显示指令执行过程
+-m：加入压缩文件后，删除原始文件
+-r：递归处理（针对文件夹内的内容使用-r）
+
+unzip
+
+-d：解压后所要存储的目录
+-q：	不显示过程
+
+*linux下常用压缩文件以.tar.gz结尾
+*linux下压缩文件必须带后缀
+
+
+Tar 归档工具
+
+语法： tar [-zjxcvfpP] filename
+c 创建新的归档文件
+x 对归档文件解包
+t 列出归档文件的文件列表
+v 输出命令归档或解包过程
+f 指定包文件名，多参数 f写最后
+C 指定解压目录位置
+z 用.tar.gz压缩归档
+j	bzip压缩归档
+J	bzip2压缩归档
+X 排除多个文件
+p 创建压缩归档文件时，保留源文件权限
+h 打包软连接
+
+按照选项行为分三类
+针对 .tar       .tar.gz     .tar.bz2     tar.xz
+ cf 创建          czf			cjf			cJf	
+tf	查看		tzf				tjf			tJf
+xf 解压			xzf				xjf			xJf
+
+//常用打包压缩组合 
+czf
+cjf
+cJf
+jxf
+xf   自动选择解压模式
+tf		查看压缩包内容
+	
+	
+	将1.txt归档到tmp下（默认czf是相对路径加P可引用绝对路径）
+tar Pczf /tmp/1.tar.gzip /root/1.txt 	
+	
+	
+安装gizp，gizp2 xz软件包
+
+[root@windVM test]# tar cf wind.tar *.txt
+[root@windVM test]# tar czf wind.tar.gz *.txt
+[root@windVM test]# tar cJf wind.tar.xz *.txt
+[root@windVM test]# tar cjf wind.tar.bz2 *.txt
+
+wind.tar:     POSIX tar archive (GNU)
+wind.tar.bz2: bzip2 compressed data, block size = 900k
+wind.tar.gz:  gzip compressed data, last modified: Mon Jul 27 08:36:41 2020, from Unix, original size 10
+wind.tar.xz:  XZ compressed data
+
+解压到目标文件夹
+tar xf wind.tar -C /tmp
+
+创建压缩文件，排除单个文件
+ tar czf wind.tar.gz --exclude=1.txt ?.txt
+ 
+按照列表文件exclude.list 排除多个文件压缩归档
+tar czfX wind.tar.gz exclude.list ?.txt
+
+
+系统文件属性
+	ls -lhi
+		-l：长格式
+		-h 人性化
+		-i innode
+
+	1.inode
+		源自于文件系统
+		windows
+			NTFS
+			FAT32(淘汰)
+				允许单个文件大小不超过4G
+		Linux
+			ext（6版本之前）
+			xft（7-之后）
+			
+	innode包含文件的元信息：
+		1。字节数
+		2.文件拥有者Userid
+		3.文件的组名group id
+		4.文件读写执行权限
+		
+		
+		
+		
+		
+	

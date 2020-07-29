@@ -1,0 +1,84 @@
+Linux 09基础
+
+使用man命令 创建文本手册页
+man man >/root/man.txt
+
+
+//在文件第五行读入另一个文件内容
+：5r /root/test1.txt
+
+
+
+命令总结
+
+帮助命令（3个）
+
+man info help（help 查看内部命令） --help（--help 查看外部命令）
+man,info:手册页，较详细的帮助
+type 可查看 内部外部
+
+文件和目录操作命令
+
+ls：列出列表 -l(长格式) -h（人性化）-a(列出隐藏)
+tree:
+	-L 目录级别
+	-d 只查看目录
+pwd:  
+du:统计文件大小 -s(文件夹总大小) -h（分开统计文件夹大小）
+mkdir
+cd
+touch
+cpmv
+rm
+ln
+find
+
+查看文件及内容处理命令
+
+cat
+more
+less 
+head
+tail
+cut
+	-d 分隔符 （-d' '）
+	-f 文件列 （f1 ,f2第一列第二列）
+sort
+uniq
+wc 统计文件的行数（wc /etc/passwd） who|wc -l 统计当前登录用户数量）
+	-l 行
+	-c 字符
+	-w 单词
+who| wc -l 统计当前用户登录数
+file
+diff
+vimdiff
+chattr
+lsattr
+rev
+
+文件压缩解压缩
+tar unzip gzip bzip2 zcat bzcat
+
+信息显示命令
+hostnamect
+unname 查看内核 
+	-r
+	-a
+uptime
+stat 查看信息
+du
+du
+top看进程
+free
+	free -m
+	
+date
+cal 打印日历
+
+搜索文件命令
+which，whereis，locate，find
+
+
+	
+
